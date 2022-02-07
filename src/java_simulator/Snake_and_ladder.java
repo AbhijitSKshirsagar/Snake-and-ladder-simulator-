@@ -5,7 +5,7 @@ public class Snake_and_ladder {
   public static void main(String[] args) {
 	
 	    int position =0;
-      
+       while(position<100) {
 	    System.out.println("position is " + position);
 		while(position <= 100) {
 	    int die=(int) (Math.random() * 10) % 6+1;
@@ -19,7 +19,12 @@ public class Snake_and_ladder {
 		  
 		   case 2:
 		   position = (position + die);
+		   if(position>100) {
+		       position = (position - die);
+		       continue; 
+		   }
 		   System.out.println( "your position after ladder is ::" + position );
+		   System.out.println("roll again");
 		   break;
 		   
 		   case 3: 
@@ -38,6 +43,6 @@ public class Snake_and_ladder {
 		 }
 	
   
-  }	
-}	
-
+        }	
+     }	
+}
