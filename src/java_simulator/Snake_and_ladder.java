@@ -4,12 +4,13 @@ public class Snake_and_ladder {
  
   public static void main(String[] args) {
 	
-	  int position =0;
+	    int position =0;
       
-	  System.out.println("position is " + position);
-		int die=(int) (Math.random() * 10) % 6+1;
-			System.out.println("dice value is " + die);
-		int value=(int) (Math.random() * 10) % 3+1;
+	    System.out.println("position is " + position);
+		while(position <= 100) {
+	    int die=(int) (Math.random() * 10) % 6+1;
+		System.out.println("dice value is " + die);
+		int value=(int) (Math.random() * 10) % 3;
 		System.out.println("case number is " + value);
 		 switch(value) {
 		   case 1:
@@ -24,15 +25,19 @@ public class Snake_and_ladder {
 		   case 3: 
 		   position = (position - die);
 		  
-		  if(position<0){
+		  if(position >= 0){
 			  position = 0;
 		  }
 			 System.out.println( "Your Position after snake is::" + position );
 		   break;
+		  
+		 default:
+			   System.out.println("Default");
+			   break;
 		   }
 		 }
 	
   
   }	
-	
+}	
 
